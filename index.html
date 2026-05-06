@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Nexova es una consultora de recursos humanos y adquisición de talento que conecta empresas en crecimiento con perfiles especializados en tecnología, retail y finanzas." />
+	<meta name="robots" content="index, follow" />
+	<meta name="author" content="Nexova" />
+	<link rel="canonical" href="https://nexova.com/" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Nexova" />
+	<meta property="og:locale" content="es_ES" />
+	<meta property="og:title" content="Nexova | Consultora de talento y recursos humanos" />
+	<meta property="og:description" content="Consultora especializada en headhunting, formación corporativa y outsourcing para empresas en España y Estados Unidos." />
+	<meta property="og:url" content="https://nexova.com/" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Nexova | Consultora de talento y recursos humanos" />
+	<meta name="twitter:description" content="Atracción y desarrollo de talento especializado para empresas en crecimiento." />
+	<title>Nexova | Consultora de talento y recursos humanos</title>
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@graph": [
+				{
+					"@type": "Organization",
+					"@id": "https://nexova.com/#organization",
+					"name": "Nexova",
+					"description": "Consultora de recursos humanos y adquisición de talento",
+					"url": "https://nexova.com/",
+					"foundingDate": "2011",
+					"address": [
+						{
+							"@type": "PostalAddress",
+							"addressCountry": "ES",
+							"addressLocality": "Valencia",
+							"addressRegion": "Comunidad Valenciana"
+						},
+						{
+							"@type": "PostalAddress",
+							"addressCountry": "US",
+							"addressLocality": "Miami",
+							"addressRegion": "Florida"
+						}
+					],
+					"contactPoint": {
+						"@type": "ContactPoint",
+						"telephone": "+34-960-123-456",
+						"contactType": "customer service",
+						"availableLanguage": ["Spanish", "English"]
+					},
+					"sameAs": [
+						"https://linkedin.com/company/nexova",
+						"https://instagram.com/nexova"
+					]
+				},
+				{
+					"@type": "WebSite",
+					"@id": "https://nexova.com/#website",
+					"url": "https://nexova.com/",
+					"name": "Nexova",
+					"publisher": {
+						"@id": "https://nexova.com/#organization"
+					}
+				},
+				{
+					"@type": "ProfessionalService",
+					"@id": "https://nexova.com/#service",
+					"name": "Nexova",
+					"url": "https://nexova.com/",
+					"serviceType": [
+						"Headhunting ejecutivo",
+						"Outsourcing de atención al cliente",
+						"Formación corporativa"
+					],
+					"areaServed": ["ES", "US"],
+					"provider": {
+						"@id": "https://nexova.com/#organization"
+					}
+				}
+			]
+		}
+	</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+	<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+	<header class="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
+		<div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+			<a href="#inicio" class="flex items-center gap-3" aria-label="Ir al inicio de Nexova">
+				<span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 text-lg font-bold text-white">N</span>
+				<span class="text-xl font-semibold tracking-tight text-slate-900">Nexova</span>
+			</a>
+
+			<nav aria-label="Navegación principal">
+				<ul class="flex items-center gap-6 text-sm font-medium text-slate-700 sm:gap-8">
+					<li><a href="#inicio" class="transition hover:text-slate-900">Inicio</a></li>
+					<li><a href="#servicios" class="transition hover:text-slate-900">Servicios</a></li>
+					<li><a href="#" data-open-talent-modal class="transition hover:text-slate-900">Talento</a></li>
+					<li><a href="#contacto" class="transition hover:text-slate-900">Contacto</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<main id="app">
+		<section id="inicio" class="relative overflow-hidden bg-slate-950 text-white">
+			<div aria-hidden="true" class="pointer-events-none absolute inset-0">
+				<div class="absolute -left-24 top-12 h-72 w-72 rounded-full bg-cyan-400/20 blur-3xl"></div>
+				<div class="absolute right-0 top-0 h-80 w-80 rounded-full bg-emerald-300/20 blur-3xl"></div>
+				<div class="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-sky-500/15 blur-3xl"></div>
+				<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.12),transparent_42%)]"></div>
+			</div>
+
+			<div class="relative mx-auto grid max-w-6xl gap-10 px-4 py-20 sm:px-6 md:grid-cols-2 md:items-center md:py-24 lg:px-8">
+				<div>
+					<p class="mb-4 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200">
+						Nexova | Talento estratégico
+					</p>
+					<h1 class="text-4xl font-semibold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+						Construimos equipos excepcionales para empresas en crecimiento
+					</h1>
+					<p class="mt-6 max-w-2xl text-base leading-relaxed text-slate-200 sm:text-lg">
+						Consultora de recursos humanos y adquisición de talento con más de 10 años ayudando a empresas de tecnología, retail y servicios financieros a encontrar y desarrollar el mejor talento.
+					</p>
+					<div class="mt-9 flex flex-wrap items-center gap-4">
+						<a
+							href="#"
+							data-open-talent-modal
+							class="inline-flex items-center justify-center rounded-xl bg-cyan-300 px-6 py-3 text-sm font-semibold text-slate-900 shadow-lg shadow-cyan-500/30 transition hover:-translate-y-0.5 hover:bg-cyan-200"
+						>
+							Unete a nuestro banco de talento
+						</a>
+						<span class="text-sm text-slate-300">Presencia en Espana y Estados Unidos</span>
+					</div>
+				</div>
+
+				<div class="rounded-2xl border border-white/15 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
+					<p class="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-200">Impacto real</p>
+					<ul class="mt-6 space-y-5">
+						<li class="flex items-start justify-between gap-6 border-b border-white/15 pb-4">
+							<span class="text-slate-200">Experiencia en talento especializado</span>
+							<strong class="text-2xl font-semibold text-white">12 anos</strong>
+						</li>
+						<li class="flex items-start justify-between gap-6 border-b border-white/15 pb-4">
+							<span class="text-slate-200">Procesos exitosos de seleccion</span>
+							<strong class="text-2xl font-semibold text-white">+500</strong>
+						</li>
+						<li class="flex items-start justify-between gap-6">
+							<span class="text-slate-200">Especializacion sectorial</span>
+							<strong class="text-base font-semibold text-white">Tecnologia, Retail y Finanzas</strong>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="servicios" class="bg-white py-20 sm:py-24">
+			<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+				<div class="max-w-3xl">
+					<p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700">Servicios</p>
+					<h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+						Soluciones especializadas para cada etapa del talento
+					</h2>
+				</div>
+
+				<div class="mt-10 grid gap-6 md:grid-cols-3">
+					<article class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h3 class="text-xl font-semibold text-slate-900">Headhunting Ejecutivo</h3>
+						<ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-600">
+							<li>Búsqueda y selección de perfiles ejecutivos y mandos medios</li>
+							<li>Proceso personalizado con garantía de reemplazo</li>
+						</ul>
+					</article>
+
+					<article class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h3 class="text-xl font-semibold text-slate-900">Outsourcing de Atención al Cliente</h3>
+						<ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-600">
+							<li>Equipos especializados para empresas tecnológicas</li>
+							<li>Formación continua y supervisión dedicada</li>
+						</ul>
+					</article>
+
+					<article class="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
+						<h3 class="text-xl font-semibold text-slate-900">Formación Corporativa</h3>
+						<ul class="mt-4 space-y-2 text-sm leading-relaxed text-slate-600">
+							<li>Programas de soft skills y liderazgo</li>
+							<li>Cursos presenciales y en línea adaptados a cada organización</li>
+						</ul>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="organizacion" class="relative bg-slate-50 py-20 sm:py-24">
+			<div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-slate-950/10 to-transparent"></div>
+			<div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+				<div class="max-w-3xl">
+					<p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700">Nuestra organizacion</p>
+					<h2 class="mt-3 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+						Una estructura integral para atraer, desarrollar y potenciar talento
+					</h2>
+					<p class="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">
+						Nexova tiene una solida reputacion en sus mercados, una red profunda de candidatos y clientes construida en doce anos, y un equipo que realmente sabe encontrar, desarrollar y acompanar el talento.
+					</p>
+				</div>
+
+				<div class="mt-12 space-y-10">
+					<article class="min-h-44 rounded-3xl border border-cyan-200/70 bg-gradient-to-br from-cyan-50 to-sky-100/60 p-7 shadow-sm sm:p-8">
+						<p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-800">Direccion y estrategia</p>
+						<h3 class="mt-3 text-2xl font-semibold text-slate-900">Direccion Ejecutiva</h3>
+						<p class="mt-2 text-sm leading-relaxed text-slate-600 sm:text-base">Define la estrategia general de Nexova, coordina prioridades del negocio y asegura alineacion entre operaciones, crecimiento y experiencia del cliente.</p>
+					</article>
+
+					<div class="rounded-3xl border border-cyan-200/70 bg-gradient-to-br from-cyan-50 to-sky-100/60 p-6 sm:p-8">
+						<h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-800">Departamentos principales</h3>
+						<div class="mt-5 grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
+							<article class="h-full min-h-44 rounded-2xl border border-cyan-200 bg-white p-6 shadow-sm shadow-cyan-900/5">
+								<h4 class="text-lg font-semibold text-slate-900">Operaciones de Seleccion</h4>
+								<p class="mt-2 text-sm leading-relaxed text-slate-600">Lidera los procesos de reclutamiento de principio a fin, desde la definicion del perfil hasta la incorporacion del talento.</p>
+							</article>
+
+							<article class="h-full min-h-44 rounded-2xl border border-cyan-200 bg-white p-6 shadow-sm shadow-cyan-900/5">
+								<h4 class="text-lg font-semibold text-slate-900">Formacion Corporativa</h4>
+								<p class="mt-2 text-sm leading-relaxed text-slate-600">Disena e imparte programas de liderazgo, comunicacion y gestion de equipos para fortalecer capacidades internas de los clientes.</p>
+							</article>
+
+							<article class="h-full min-h-44 rounded-2xl border border-cyan-200 bg-white p-6 shadow-sm shadow-cyan-900/5">
+								<h4 class="text-lg font-semibold text-slate-900">Soporte al Cliente Externalizado</h4>
+								<p class="mt-2 text-sm leading-relaxed text-slate-600">Proporciona equipos dedicados de atencion para acompanar a empresas de tecnologia, retail y servicios financieros.</p>
+							</article>
+						</div>
+
+						<div class="mt-5 grid auto-rows-fr gap-5 sm:grid-cols-2 lg:mx-auto lg:max-w-3xl lg:grid-cols-2">
+							<article class="h-full min-h-44 rounded-2xl border border-cyan-200 bg-white p-6 shadow-sm shadow-cyan-900/5">
+								<h4 class="text-lg font-semibold text-slate-900">Ventas y Desarrollo de Negocio</h4>
+								<p class="mt-2 text-sm leading-relaxed text-slate-600">Impulsa el crecimiento comercial mediante gestion de cuentas, generacion de nuevas oportunidades y expansion de relaciones con clientes.</p>
+							</article>
+
+							<article class="h-full min-h-44 rounded-2xl border border-cyan-200 bg-white p-6 shadow-sm shadow-cyan-900/5">
+								<h4 class="text-lg font-semibold text-slate-900">Marketing y Comunicacion</h4>
+								<p class="mt-2 text-sm leading-relaxed text-slate-600">Gestiona la presencia de marca en canales digitales y contenidos para fortalecer posicionamiento y alcance.</p>
+							</article>
+						</div>
+					</div>
+
+					<div class="rounded-3xl border border-cyan-200/70 bg-gradient-to-br from-cyan-50 to-sky-100/60 p-6 sm:p-8">
+						<h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-800">Procesos de soporte transversal</h3>
+						<p class="mt-2 text-sm text-slate-600">Estas areas habilitan y fortalecen la operacion de todos los departamentos de Nexova.</p>
+						<div class="mt-5 grid auto-rows-fr gap-5 sm:grid-cols-2">
+							<article class="h-full min-h-36 rounded-2xl border border-cyan-200 bg-white p-6 shadow-sm shadow-cyan-900/5">
+								<h4 class="text-lg font-semibold text-slate-900">Recursos Humanos</h4>
+								<p class="mt-2 text-sm leading-relaxed text-slate-600">Acompana el ciclo de vida del colaborador, incluyendo incorporacion, desarrollo y gestion administrativa interna.</p>
+							</article>
+
+							<article class="h-full min-h-36 rounded-2xl border border-cyan-200 bg-white p-6 shadow-sm shadow-cyan-900/5">
+								<h4 class="text-lg font-semibold text-slate-900">Tecnologia e Infraestructura</h4>
+								<p class="mt-2 text-sm leading-relaxed text-slate-600">Sostiene el ecosistema tecnologico de la compania y habilita la operacion digital de todas las areas.</p>
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<div id="talentModal" class="fixed inset-0 z-[60] hidden" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="talentModalTitle" aria-describedby="talentModalDescription">
+		<button type="button" data-close-talent-modal class="absolute inset-0 bg-slate-900/65 backdrop-blur-sm" aria-label="Cerrar formulario de talento"></button>
+		<div class="relative flex min-h-full items-center justify-center px-4 py-6 sm:p-8">
+			<div class="w-full max-w-3xl overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl">
+				<div class="flex items-start justify-between gap-4 border-b border-slate-200 px-5 py-4 sm:px-6">
+					<div>
+						<p class="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-700">Registro de talento</p>
+						<h2 id="talentModalTitle" class="mt-1 text-2xl font-semibold text-slate-900">Únete al banco de talento de Nexova</h2>
+						<p id="talentModalDescription" class="mt-2 text-sm text-slate-600">Completa el formulario para compartir tu perfil profesional con nuestro equipo de selección.</p>
+					</div>
+					<button type="button" data-close-talent-modal class="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 text-slate-600 transition hover:bg-slate-100 hover:text-slate-900" aria-label="Cerrar formulario">✕</button>
+				</div>
+
+				<div class="max-h-[80vh] overflow-y-auto px-5 py-5 sm:px-6 sm:py-6">
+					<p class="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+						¿Eres una empresa buscando talento? Escríbenos a
+						<a href="mailto:contacto@nexova.com" data-company-mailto class="font-semibold underline decoration-amber-400 underline-offset-2">contacto@nexova.com</a>
+					</p>
+
+					<form id="talentForm" class="mt-6 space-y-5" novalidate aria-describedby="formErrorSummary">
+						<div id="formErrorSummary" class="hidden rounded-xl border border-rose-300 bg-rose-50 px-4 py-3 text-sm text-rose-800" role="alert" aria-live="assertive"></div>
+
+						<div class="grid gap-5 sm:grid-cols-2">
+							<div class="sm:col-span-2">
+								<label for="fullName" class="text-sm font-semibold text-slate-800">Nombre completo *</label>
+								<input id="fullName" name="fullName" type="text" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-200" autocomplete="name" required aria-describedby="errorFullName" />
+								<p id="errorFullName" class="mt-1 text-sm text-rose-600" aria-live="polite"></p>
+							</div>
+
+							<div>
+								<label for="email" class="text-sm font-semibold text-slate-800">Email *</label>
+								<input id="email" name="email" type="email" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-200" autocomplete="email" required aria-describedby="errorEmail" />
+								<p id="errorEmail" class="mt-1 text-sm text-rose-600" aria-live="polite"></p>
+							</div>
+
+							<div>
+								<label for="phone" class="text-sm font-semibold text-slate-800">Teléfono *</label>
+								<input id="phone" name="phone" type="tel" placeholder="+34 612 345 678" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-200" autocomplete="tel" required aria-describedby="errorPhone" />
+								<p id="errorPhone" class="mt-1 text-sm text-rose-600" aria-live="polite"></p>
+							</div>
+
+							<div>
+								<label for="country" class="text-sm font-semibold text-slate-800">País de residencia *</label>
+								<select id="country" name="country" class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-200" required aria-describedby="errorCountry">
+									<option value="">Selecciona una opción</option>
+									<option value="es">España</option>
+									<option value="us">Estados Unidos</option>
+									<option value="other">Otro</option>
+								</select>
+								<p id="errorCountry" class="mt-1 text-sm text-rose-600" aria-live="polite"></p>
+							</div>
+
+							<div>
+								<label for="experience" class="text-sm font-semibold text-slate-800">Años de experiencia *</label>
+								<input id="experience" name="experience" type="number" min="0" max="50" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-200" required aria-describedby="errorExperience" />
+								<p id="errorExperience" class="mt-1 text-sm text-rose-600" aria-live="polite"></p>
+							</div>
+
+							<div>
+								<label for="sector" class="text-sm font-semibold text-slate-800">Sector de interés *</label>
+								<select id="sector" name="sector" class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-200" required aria-describedby="errorSector">
+									<option value="">Selecciona una opción</option>
+									<option value="tech">Tecnología</option>
+									<option value="retail">Retail</option>
+									<option value="finance">Servicios Financieros</option>
+									<option value="consulting">Consultoría</option>
+									<option value="other">Otro</option>
+								</select>
+								<p id="errorSector" class="mt-1 text-sm text-rose-600" aria-live="polite"></p>
+							</div>
+
+							<div>
+								<label for="englishLevel" class="text-sm font-semibold text-slate-800">Nivel de inglés *</label>
+								<select id="englishLevel" name="englishLevel" class="mt-1 w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-200" required aria-describedby="errorEnglishLevel">
+									<option value="">Selecciona una opción</option>
+									<option value="basic">Básico</option>
+									<option value="intermediate">Intermedio</option>
+									<option value="advanced">Avanzado</option>
+									<option value="native">Nativo</option>
+								</select>
+								<p id="errorEnglishLevel" class="mt-1 text-sm text-rose-600" aria-live="polite"></p>
+							</div>
+						</div>
+
+						<fieldset aria-describedby="errorAvailability">
+							<legend class="text-sm font-semibold text-slate-800">Disponibilidad *</legend>
+							<div class="mt-3 grid gap-3 sm:grid-cols-2">
+								<label class="flex items-center gap-2 rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-700"><input type="radio" name="availability" value="immediate" class="h-4 w-4 accent-blue-600" /> Inmediata</label>
+								<label class="flex items-center gap-2 rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-700"><input type="radio" name="availability" value="1m" class="h-4 w-4 accent-blue-600" /> 1 mes</label>
+								<label class="flex items-center gap-2 rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-700"><input type="radio" name="availability" value="2-3m" class="h-4 w-4 accent-blue-600" /> 2-3 meses</label>
+								<label class="flex items-center gap-2 rounded-xl border border-slate-200 px-3 py-2 text-sm text-slate-700"><input type="radio" name="availability" value="exploring" class="h-4 w-4 accent-blue-600" /> Solo explorando</label>
+							</div>
+							<p id="errorAvailability" class="mt-1 text-sm text-rose-600" aria-live="polite"></p>
+						</fieldset>
+
+						<div class="grid gap-5 sm:grid-cols-2">
+							<div>
+								<label for="linkedin" class="text-sm font-semibold text-slate-800">LinkedIn (URL del perfil)</label>
+								<input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/tu-perfil" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-200" aria-describedby="errorLinkedin" />
+								<p id="errorLinkedin" class="mt-1 text-sm text-rose-600" aria-live="polite"></p>
+							</div>
+
+							<div>
+								<div class="flex items-center justify-between gap-3">
+									<label for="comments" class="text-sm font-semibold text-slate-800">Comentarios adicionales</label>
+									<span id="commentsCounter" class="text-xs font-semibold text-slate-500">0/500</span>
+								</div>
+								<textarea id="comments" name="comments" rows="4" maxlength="500" class="mt-1 w-full rounded-xl border border-slate-300 px-4 py-2.5 text-slate-900 outline-none transition focus:border-blue-600 focus:ring-2 focus:ring-blue-200" aria-describedby="commentsCounter errorComments"></textarea>
+								<p id="errorComments" class="mt-1 text-sm text-rose-600" aria-live="polite"></p>
+							</div>
+						</div>
+
+						<label class="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700">
+							<input id="privacy" name="privacy" type="checkbox" class="mt-0.5 h-4 w-4 accent-blue-600" required aria-describedby="errorPrivacy" />
+							Acepto la política de tratamiento de datos *
+						</label>
+						<p id="errorPrivacy" class="text-sm text-rose-600" aria-live="polite"></p>
+
+						<div class="flex flex-wrap items-center gap-3 pt-2">
+							<button type="submit" class="inline-flex items-center justify-center rounded-xl bg-cyan-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-cyan-700">Enviar registro</button>
+							<button type="button" data-close-talent-modal class="inline-flex items-center justify-center rounded-xl border border-slate-300 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100">Cancelar</button>
+						</div>
+					</form>
+
+					<div id="formSuccess" class="mt-6 hidden rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-emerald-900">
+						<h3 class="text-lg font-semibold">¡Gracias por tu interés en Nexova!</h3>
+						<p class="mt-2 text-sm leading-relaxed">
+							Hemos recibido tu información. Nuestro equipo de selección la revisará y te contactaremos en caso de que tu perfil encaje con alguna de nuestras oportunidades actuales o futuras.
+						</p>
+						<p class="mt-2 text-sm leading-relaxed">Mientras tanto, síguenos en LinkedIn para estar al día de nuestras vacantes y contenido sobre desarrollo profesional.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer id="contacto" class="border-t border-slate-200 bg-slate-950 text-slate-200">
+		<div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
+			<div class="grid gap-8 md:grid-cols-2">
+				<div>
+					<h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">Contacto</h2>
+					<ul class="mt-4 space-y-2 text-sm sm:text-base">
+						<li>Email: <a href="mailto:contacto@nexova.com" class="transition hover:text-cyan-300">contacto@nexova.com</a></li>
+						<li>Valencia: <a href="tel:+34960123456" class="transition hover:text-cyan-300">+34 960 123 456</a></li>
+						<li>Miami: <a href="tel:+13055550191" class="transition hover:text-cyan-300">+1 305 555 0191</a></li>
+					</ul>
+				</div>
+
+				<div class="md:text-right">
+					<h2 class="text-sm font-semibold uppercase tracking-[0.18em] text-cyan-300">Redes</h2>
+					<div class="mt-4 flex items-center gap-5 text-sm md:justify-end sm:text-base">
+						<a href="https://linkedin.com/company/nexova" target="_blank" rel="noopener noreferrer" class="transition hover:text-cyan-300">LinkedIn</a>
+						<a href="https://instagram.com/nexova" target="_blank" rel="noopener noreferrer" class="transition hover:text-cyan-300">Instagram</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="mt-10 border-t border-slate-800 pt-6 text-sm text-slate-400">
+				<p>© 2025 Nexova. Todos los derechos reservados.</p>
+			</div>
+		</div>
+	</footer>
+
+	<script src="./validation.js"></script>
+</body>
+</html>
