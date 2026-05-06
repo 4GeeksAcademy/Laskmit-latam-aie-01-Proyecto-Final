@@ -1,25 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
-	const talentModal = document.getElementById("talentModal");
 	const form = document.getElementById("talentForm");
+	if (!form) {
+		return;
+	}
+
 	const successBox = document.getElementById("formSuccess");
 	const comments = document.getElementById("comments");
 	const commentsCounter = document.getElementById("commentsCounter");
 	const formErrorSummary = document.getElementById("formErrorSummary");
 	const companyMailtoLink = document.querySelector("[data-company-mailto]");
-	const openTalentTriggers = document.querySelectorAll("[data-open-talent-modal]");
-	const closeTalentTriggers = document.querySelectorAll("[data-close-talent-modal]");
 	const firstField = document.getElementById("fullName");
-	let lastFocusedTrigger = null;
 
-
-	if (
-		!talentModal ||
-		!form ||
-		!successBox ||
-		!comments ||
-		!commentsCounter ||
-		!firstField
-	) {
+	if (!successBox || !comments || !commentsCounter || !firstField) {
 		return;
 	}
 
@@ -64,11 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	const getField = (name) => form.elements[name];
 
-	const updateBodyScroll = () => {
-		const isTalentOpen = !talentModal.classList.contains("hidden");
-		document.body.classList.toggle("modal-open", isTalentOpen);
-	};
-
 	const setFieldError = (fieldName, message) => {
 		const errorEl = document.getElementById(fieldToErrorId[fieldName]);
 		if (!errorEl) {
@@ -110,45 +97,15 @@ document.addEventListener("DOMContentLoaded", () => {
 		field.classList.toggle("focus:ring-rose-200", Boolean(message));
 	};
 
-	const openTalentModal = () => {
-		talentModal.classList.remove("hidden");
-		talentModal.setAttribute("aria-hidden", "false");
-		openTalentTriggers.forEach((trigger) => trigger.setAttribute("aria-expanded", "true"));
-		updateBodyScroll();
-		firstField.focus();
-	};
-
-	const closeTalentModal = () => {
-		talentModal.classList.add("hidden");
-		talentModal.setAttribute("aria-hidden", "true");
-		openTalentTriggers.forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
-		updateBodyScroll();
-		if (lastFocusedTrigger instanceof HTMLElement) {
-			lastFocusedTrigger.focus();
-		}
-	};
-
-	const clearTalentValidationState = () => {
+	const clearValidationState = () => {
 		Object.keys(fieldToErrorId).forEach((fieldName) => {
 			setFieldError(fieldName, "");
 		});
+
 		if (formErrorSummary) {
 			formErrorSummary.classList.add("hidden");
 			formErrorSummary.innerHTML = "";
 		}
-	};
-
-	const resetTalentModalState = () => {
-		form.reset();
-		form.classList.remove("hidden");
-		successBox.classList.add("hidden");
-		clearTalentValidationState();
-		updateCommentsCounter();
-	};
-
-	const cancelTalentFlow = () => {
-		resetTalentModalState();
-		closeTalentModal();
 	};
 
 	const updateCommentsCounter = () => {
@@ -230,6 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			"comments",
 			"privacy"
 		];
+
 		const errors = [];
 
 		fields.forEach((field) => {
@@ -258,46 +216,18 @@ document.addEventListener("DOMContentLoaded", () => {
 			.map((error) => `<li>${error.replaceAll("<", "&lt;").replaceAll(">", "&gt;")}</li>`)
 			.join("");
 
-		formErrorSummary.innerHTML = `<p class=\"font-semibold\">Corrige los siguientes errores:</p><ul class=\"mt-2 list-disc space-y-1 pl-5\">${items}</ul>`;
+		formErrorSummary.innerHTML = `<p class="font-semibold">Corrige los siguientes errores:</p><ul class="mt-2 list-disc space-y-1 pl-5">${items}</ul>`;
 		formErrorSummary.classList.remove("hidden");
 	};
-
-	openTalentTriggers.forEach((trigger) => {
-		trigger.setAttribute("aria-controls", "talentModal");
-		trigger.setAttribute("aria-expanded", "false");
-	});
-
-	openTalentTriggers.forEach((trigger) => {
-		trigger.addEventListener("click", (event) => {
-			event.preventDefault();
-			lastFocusedTrigger = event.currentTarget instanceof HTMLElement ? event.currentTarget : null;
-			openTalentModal();
-		});
-	});
-
-	closeTalentTriggers.forEach((trigger) => {
-		trigger.addEventListener("click", () => {
-			cancelTalentFlow();
-		});
-	});
 
 	if (companyMailtoLink) {
 		companyMailtoLink.addEventListener("click", (event) => {
 			event.preventDefault();
-			cancelTalentFlow();
-			window.location.href = companyMailtoLink.getAttribute("href") || "mailto:contacto@nexova.com";
+			const mailtoTarget = companyMailtoLink.getAttribute("href") || "mailto:contacto@nexova.com";
+			window.open(mailtoTarget, "_blank");
+			window.location.href = "./index.html";
 		});
 	}
-
-	document.addEventListener("keydown", (event) => {
-		if (event.key !== "Escape") {
-			return;
-		}
-
-		if (!talentModal.classList.contains("hidden")) {
-			cancelTalentFlow();
-		}
-	});
 
 	controlledFields.forEach((fieldName) => {
 		const field = getField(fieldName);
@@ -305,28 +235,30 @@ document.addEventListener("DOMContentLoaded", () => {
 			return;
 		}
 
-		const eventName = field.type === "checkbox" || field.tagName === "SELECT" ? "change" : "blur";
-		field.addEventListener(eventName, () => {
-			if (talentModal.classList.contains("hidden")) {
-				return;
-			}
+		const isChoiceControl = field.type === "checkbox" || field.tagName === "SELECT";
+		if (isChoiceControl) {
+			field.addEventListener("change", () => {
+				validateField(fieldName);
+			});
+			return;
+		}
+
+		field.addEventListener("blur", () => {
+			validateField(fieldName);
+		});
+
+		field.addEventListener("input", () => {
 			validateField(fieldName);
 		});
 	});
 
 	form.querySelectorAll('input[name="availability"]').forEach((radio) => {
 		radio.addEventListener("change", () => {
-			if (talentModal.classList.contains("hidden")) {
-				return;
-			}
 			validateField("availability");
 		});
 	});
 
 	comments.addEventListener("input", () => {
-		if (talentModal.classList.contains("hidden")) {
-			return;
-		}
 		updateCommentsCounter();
 		validateField("comments");
 	});
@@ -341,10 +273,21 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 
 		showAccumulatedErrors([]);
-
 		form.classList.add("hidden");
 		successBox.classList.remove("hidden");
+
+		window.setTimeout(() => {
+			window.location.href = "./index.html";
+		}, 2500);
 	});
 
+	form.addEventListener("reset", () => {
+		window.setTimeout(() => {
+			clearValidationState();
+			updateCommentsCounter();
+		}, 0);
+	});
+
+	firstField.focus();
 	updateCommentsCounter();
 });
