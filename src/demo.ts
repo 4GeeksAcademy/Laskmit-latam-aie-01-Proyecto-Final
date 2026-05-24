@@ -1,11 +1,9 @@
+// Comandos para ejecutar este archivo desde la raiz del proyecto:
+// 1)npm install typescript
+// 2) npx tsx src/demo.ts
+
 import type { Candidate, Vacancy, SelectionProcess } from "./types/models";
 import { validateCandidate, validateVacancy } from "./utils/validations";
-
-// Comandos para ejecutar este archivo desde la raiz del proyecto:
-// parace que hay que poner primero 
-// npm install typescript
-// 1) npx tsx src/demo.ts
-// 2) npx tsc --noEmit
 
 console.log("Corrida de prueba: Archivo demo.ts para probar Hito 2");
 
