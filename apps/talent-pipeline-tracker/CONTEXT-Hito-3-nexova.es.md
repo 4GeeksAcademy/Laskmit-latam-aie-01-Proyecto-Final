@@ -86,3 +86,22 @@ La API mock está desplegada de forma centralizada y es compartida por todos los
 
 _Documento interno — 4Geeks Academy · AI Engineering Track_
 _Contexto de uso exclusivo en la generación de proyectos del programa_
+
+## Pasos para construir la solución
+
+**Paso 00** Funciones de la API:
+La API ya está lista y está documentada en https://playground.4geeks.com/tracker/api/v1/docs. Todas las peticiones deben gestionarse de forma asíncrona — la interfaz debe comunicar los estados de carga y manejar los errores con claridad. El equipo no puede permitirse una herramienta que falle en silencio o que deje al usuario sin saber qué está pasando.
+Toda la funcionalidad de la API debe crearse en el directorio Services que se encuentra en la raiz al mismo nivel de apps.  
+Todas las llamadas a la API deben hacerse con async/await
+Cada operación de obtención de datos debe tener al menos 3 estados: cargando, éxito y error,
+Luego de un PATH, PUSH ó POST, se actualiza la pagina sin recarga completa de página.
+
+**Paso 01:**
+- Mostrar todas las candidaturas en un listado con nombre, puesto, estado y etapa de un vistazo.
+- Colocar dos filtros, uno por estado y otro por etapa y colocar busqueda por nombre o email, todos estos cambios de la página sin recargar la página completa.
+- Asegurate de que se cumplan estas condiciones:
+    Muestra el nombre completo, el puesto, el estado actual y la etapa actual de cada candidato.
+    Implementa filtro por estado y filtro por etapa usando query parameters (useSearchParams).
+    Implementa un campo de búsqueda que filtre por nombre o email sin recargar la página.
+    Muestra un estado de carga mientras se obtienen los datos y un mensaje de error si la petición falla.
+
