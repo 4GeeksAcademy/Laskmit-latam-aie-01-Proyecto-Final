@@ -105,3 +105,11 @@ Luego de un PATH, PUSH ó POST, se actualiza la pagina sin recarga completa de p
     Implementa un campo de búsqueda que filtre por nombre o email sin recargar la página.
     Muestra un estado de carga mientras se obtienen los datos y un mensaje de error si la petición falla.
 
+**Paso 03:**  Detalle de un Candidato:  (FALTA ESTE)
+ - Abrir el detalle de un candidato para visualizarlo y actualizar su estado o etapa desde ahí: Esto lo vamos a implementar  colocando un boton de accion en cada linea para ver el detalle del candidato. Colocar un icono solamente para que el botón quede cuadradito y pequeño.  Hacerle un rol-hover donde se muestre el texto de Ver detalle.
+- En el detalle, muestra todos los campos disponibles: nombre, email, teléfono, puesto, LinkedIn, enlace al CV, años de experiencia, estado, etapa y fecha de aplicación.
+- Incluye un control para actualizar el estado mediante PATCH /records/:id.
+- Incluye un control para actualizar la etapa mediante PATCH /records/:id.
+- Muestra el listado de notas obtenidas desde GET /records/:id/notes.
+- Permite añadir una nueva nota mediante POST /records/:id/notes.
+- Permite eliminar una nota mediante DELETE /records/:id/notes/:note_id.
