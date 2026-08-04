@@ -1,4 +1,6 @@
-const API_BASE_URL = "https://playground.4geeks.com/tracker/api/v1";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, "") ??
+  "https://playground.4geeks.com/tracker/api/v1";
 
 export type CandidateStatus = "received" | "in_progress" | "selected" | "discarded";
 export type CandidateStage =
@@ -24,11 +26,46 @@ export interface CandidateRecord {
   updated_at: string;
 }
 
-interface ListRecordsResponse {
+export interface CandidateNote {
+  id: string;
+  record_id: string;
+  content: string;
+  created_at: string;
+}
+
+export interface CandidateRecordInput {
+  full_name: string;
+  email: string;
+  phone: string;
+  position: string;
+  linkedin_url: string | null;
+  cv_url: string | null;
+  experience_years: number;
+}
+
+export interface CandidateRecordPatch {
+  status?: CandidateStatus;
+  stage?: CandidateStage;
+}
+
+export interface ListRecordsResponse {
   total: number;
   page: number;
   limit: number;
   data: CandidateRecord[];
+}
+
+export interface RecordNotesResponse {
+  data: CandidateNote[];
+  meta: {
+    total: number;
+  };
+}
+
+interface ValidationErrorDetail {
+  loc: Array<string | number>;
+  msg: string;
+  type: string;
 }
 
 export interface ListRecordsParams {
@@ -47,20 +84,22 @@ export const STATUS_LABELS: Record<CandidateStatus, string> = {
 };
 
 export const STAGE_LABELS: Record<CandidateStage, string> = {
-  pending: "Pendiente de revision",
-  review: "En revision",
+  pending: "Pendiente de revisión",
+  review: "En revisión",
   personal_interview: "Entrevista personal",
-  technical_interview: "Entrevista tecnica",
+  technical_interview: "Entrevista técnica",
   offer_presented: "Oferta presentada",
 };
 
 export class ApiError extends Error {
   readonly statusCode: number;
+  readonly details: string[];
 
-  constructor(message: string, statusCode: number) {
+  constructor(message: string, statusCode: number, details: string[] = []) {
     super(message);
     this.name = "ApiError";
     this.statusCode = statusCode;
+    this.details = details;
   }
 }
 
@@ -85,6 +124,43 @@ function buildQueryParams(params: ListRecordsParams): string {
   return searchParams.toString();
 }
 
+function buildErrorFromBody(errorBody: unknown, statusCode: number): ApiError {
+  if (
+    errorBody &&
+    typeof errorBody === "object" &&
+    "detail" in errorBody
+  ) {
+    const detail = (errorBody as { detail?: unknown }).detail;
+
+    if (typeof detail === "string") {
+      return new ApiError(detail, statusCode);
+    }
+
+    if (Array.isArray(detail)) {
+      const messages = detail
+        .map((entry) => {
+          if (
+            entry &&
+            typeof entry === "object" &&
+            "msg" in entry &&
+            typeof (entry as ValidationErrorDetail).msg === "string"
+          ) {
+            return (entry as ValidationErrorDetail).msg;
+          }
+
+          return null;
+        })
+        .filter((entry): entry is string => Boolean(entry));
+
+      if (messages.length > 0) {
+        return new ApiError(messages.join(" "), statusCode, messages);
+      }
+    }
+  }
+
+  return new ApiError(`Error ${statusCode}`, statusCode);
+}
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(`${API_BASE_URL}${path}`, {
     ...init,
@@ -96,18 +172,25 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   });
 
   if (!response.ok) {
-    let errorMessage = `Error ${response.status}`;
+    let apiError = new ApiError(`Error ${response.status}`, response.status);
 
     try {
-      const errorBody = (await response.json()) as { detail?: unknown };
-      if (typeof errorBody.detail === "string") {
-        errorMessage = errorBody.detail;
-      }
+      const errorBody = (await response.json()) as unknown;
+      apiError = buildErrorFromBody(errorBody, response.status);
     } catch {
-      // Keep fallback status based message when response body is not JSON.
+      // Mantener error basado en status cuando no haya JSON.
     }
 
-    throw new ApiError(errorMessage, response.status);
+    throw apiError;
+  }
+
+  if (response.status === 204) {
+    return undefined as T;
+  }
+
+  const contentType = response.headers.get("content-type") ?? "";
+  if (!contentType.includes("application/json")) {
+    return undefined as T;
   }
 
   return (await response.json()) as T;
@@ -120,4 +203,54 @@ export async function listCandidateRecords(
   const path = query ? `/records?${query}` : "/records";
 
   return request<ListRecordsResponse>(path);
+}
+
+export async function getCandidateRecord(id: string): Promise<CandidateRecord> {
+  return request<CandidateRecord>(`/records/${id}`);
+}
+
+export async function createCandidateRecord(
+  payload: CandidateRecordInput,
+): Promise<CandidateRecord> {
+  return request<CandidateRecord>("/records", {
+    method: "POST",
+    body: JSON.stringify(payload),
+  });
+}
+
+export async function replaceCandidateRecord(
+  id: string,
+  payload: CandidateRecordInput,
+): Promise<CandidateRecord> {
+  return request<CandidateRecord>(`/records/${id}`, {
+    method: "PUT",
+    body: JSON.stringify(payload),
+  });
+}
+
+export async function patchCandidateRecord(
+  id: string,
+  payload: CandidateRecordPatch,
+): Promise<CandidateRecord> {
+  return request<CandidateRecord>(`/records/${id}`, {
+    method: "PATCH",
+    body: JSON.stringify(payload),
+  });
+}
+
+export async function getCandidateNotes(id: string): Promise<RecordNotesResponse> {
+  return request<RecordNotesResponse>(`/records/${id}/notes`);
+}
+
+export async function addCandidateNote(id: string, content: string): Promise<void> {
+  await request<unknown>(`/records/${id}/notes`, {
+    method: "POST",
+    body: JSON.stringify({ content }),
+  });
+}
+
+export async function deleteCandidateNote(id: string, noteId: string): Promise<void> {
+  await request<void>(`/records/${id}/notes/${noteId}`, {
+    method: "DELETE",
+  });
 }
