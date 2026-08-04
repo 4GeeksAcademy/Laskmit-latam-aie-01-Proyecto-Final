@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Nexova Talent Pipeline Tracker
 
-## Getting Started
+Aplicacion interna de Nexova para el equipo de People & Talent. Permite listar candidaturas, filtrarlas por estado y etapa, registrar nuevas personas candidatas, revisar el detalle individual, actualizar el pipeline y gestionar notas internas.
 
-First, run the development server:
+## Comandos
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+La app queda disponible en `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Funcionalidad implementada
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Listado de candidaturas con filtros por query string y busqueda por nombre o email.
+- Formulario de alta de candidatura con validacion local.
+- Ruta de detalle por candidato en `/candidates/[id]`.
+- Actualizacion de estado y etapa con `PATCH`.
+- Edicion completa con `PUT`.
+- Listado, alta y borrado de notas internas.
+- Estados de carga y error visibles en las operaciones asincronas.
 
-## Learn More
+## Estructura principal
 
-To learn more about Next.js, take a look at the following resources:
+- `app/`: rutas App Router.
+- `components/`: componentes de UI reutilizables.
+- `lib/`: utilidades de formato.
+- `types/`: tipos especificos de la interfaz.
+- `../../../Services/talentTrackerApi.ts`: cliente compartido de la API del tracker.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Notas tecnicas
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Next.js 16 con App Router y TypeScript.
+- `next.config.ts` habilita `experimental.externalDir` para importar el cliente HTTP compartido desde `Services/`.
+- La API base se toma de `NEXT_PUBLIC_API_URL` si existe; en caso contrario usa la URL publica del playground.
 
-## Deploy on Vercel
+## Validacion
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run build`
+- `npm run lint`
