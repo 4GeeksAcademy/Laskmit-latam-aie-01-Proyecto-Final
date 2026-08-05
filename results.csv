@@ -1,0 +1,28 @@
+metric,value,percentage,notes
+total_records,100,,
+valid_records,96,,
+invalid_records,4,,
+invalid:missing_client_company,1,,Missing client_company
+invalid:invalid_category,1,,Invalid or missing category
+invalid:invalid_description,0,,Missing or short description
+invalid:invalid_agent_id,0,,Invalid or missing agent_id
+invalid:invalid_status,0,,Invalid or missing status
+invalid:invalid_email,1,,Invalid or missing email
+invalid:closed_without_score,1,,"Closed ticket, no score"
+invalid:score_out_of_range,0,,Score out of range
+category:TECHNICAL,28,29.2,valid records
+category:BILLING,18,18.8,valid records
+category:ACCESS,21,21.9,valid records
+category:HR_QUERY,17,17.7,valid records
+category:COMPLAINT,12,12.5,valid records
+status:OPEN,27,28.1,valid records
+status:CLOSED,56,58.3,valid records
+status:DISCARDED,13,13.5,valid records
+closed_scored_tickets,56,,
+closed_valid_records,56,,
+average_satisfaction_score,3.84,,out of 5.00
+satisfaction_score:1,2,,Very dissatisfied
+satisfaction_score:2,5,,Dissatisfied
+satisfaction_score:3,10,,Neutral
+satisfaction_score:4,22,,Satisfied
+satisfaction_score:5,17,,Very satisfied

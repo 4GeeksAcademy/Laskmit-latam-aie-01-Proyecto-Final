@@ -24,8 +24,8 @@ Implementado completamente como app Next.js con App Router para gestionar el pip
 - Se amplio el cliente API en `Services/talentTrackerApi.ts` con operaciones CRUD y tipos TypeScript.
 
 ## Como correrlo
-1. `cd /workspaces/Laskmit-latam-aie-01-Proyecto-Final/apps/talent-pipeline-tracker`
-2. `npm install`
+1. ``
+2. `npm install` (solo se corre la primera vez o si hubo algun dano)
 3. `npm run dev`
 4. Abrir `http://localhost:3000`
 
