@@ -1,0 +1,361 @@
+.page {
+  background:
+    radial-gradient(circle at 18% 14%, #244f68 0%, transparent 42%),
+    radial-gradient(circle at 82% 6%, #378a6f 0%, transparent 34%),
+    linear-gradient(160deg, #f5f9fc 0%, #edf7f2 50%, #f2f3f8 100%);
+  color: #122130;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1120px;
+  width: 92%;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(6px);
+  background-color: rgba(248, 252, 255, 0.88);
+  border-bottom: 1px solid #d8e7eb;
+}
+
+.header .container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.85rem 0;
+}
+
+.brand {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.7rem;
+}
+
+.brandMark {
+  align-items: center;
+  background: #12304a;
+  border-radius: 0.75rem;
+  color: #f2fbff;
+  display: inline-flex;
+  font-weight: 700;
+  height: 2.35rem;
+  justify-content: center;
+  width: 2.35rem;
+}
+
+.brandText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.navList {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+}
+
+.navLink {
+  color: #28445b;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.hero {
+  color: #f4fbff;
+  overflow: hidden;
+  padding: 4.8rem 0 4rem;
+  position: relative;
+  background: linear-gradient(145deg, #071823 0%, #123449 55%, #0c2f3e 100%);
+}
+
+.heroGlowA,
+.heroGlowB {
+  border-radius: 999px;
+  filter: blur(70px);
+  position: absolute;
+}
+
+.heroGlowA {
+  background: rgba(78, 201, 183, 0.4);
+  height: 17rem;
+  left: -4rem;
+  top: 2rem;
+  width: 17rem;
+}
+
+.heroGlowB {
+  background: rgba(97, 164, 234, 0.36);
+  height: 16rem;
+  right: -3rem;
+  top: 0;
+  width: 16rem;
+}
+
+.heroGrid {
+  align-items: center;
+  display: grid;
+  gap: 2.3rem;
+  grid-template-columns: 1.5fr 1fr;
+  position: relative;
+}
+
+.heroEyebrow {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #9de4db;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  margin-top: 0.8rem;
+}
+
+.heroSubtitle {
+  color: #cae8f2;
+  margin-top: 1rem;
+  max-width: 50ch;
+}
+
+.heroCtas {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.95rem;
+  margin-top: 1.6rem;
+}
+
+.heroCtas span {
+  color: #a9cedd;
+  font-size: 0.86rem;
+}
+
+.primaryButton {
+  background: linear-gradient(125deg, #96f6e1, #6ec0ff);
+  border-radius: 0.8rem;
+  color: #082130;
+  display: inline-flex;
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.82rem 1.3rem;
+}
+
+.heroCard {
+  border: 1px solid rgba(199, 235, 252, 0.35);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  background: rgba(241, 252, 255, 0.12);
+}
+
+.heroCardTitle {
+  color: #9ce5dc;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.stepList {
+  list-style: none;
+  margin-top: 1.1rem;
+}
+
+.stepList li {
+  align-items: center;
+  border-bottom: 1px solid rgba(184, 221, 236, 0.28);
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+}
+
+.stepList li:last-child {
+  border-bottom: none;
+}
+
+.stepList span {
+  color: #d7edf5;
+  font-size: 0.92rem;
+}
+
+.stepList strong {
+  color: #effdff;
+}
+
+.section,
+.sectionAlt {
+  padding: 4.5rem 0;
+}
+
+.sectionAlt {
+  background: #f2f7fb;
+}
+
+.sectionEyebrow {
+  color: #1a7085;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  margin-top: 0.7rem;
+}
+
+.sectionLead {
+  color: #44617a;
+  margin-top: 1rem;
+  max-width: 68ch;
+}
+
+.cardGridThree,
+.cardGridTwo {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
+.cardGridThree {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cardGridTwo {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.infoCard,
+.highlightCard,
+.executiveCard,
+.groupBlock {
+  border: 1px solid #d5e7e8;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.infoCard,
+.highlightCard {
+  padding: 1.15rem;
+}
+
+.infoCard h3,
+.infoCard h4 {
+  font-size: 1.15rem;
+}
+
+.infoCard ul {
+  color: #38536a;
+  margin-top: 0.7rem;
+  padding-left: 1rem;
+}
+
+.infoCard p,
+.highlightCard p,
+.executiveCard span {
+  color: #3f5e72;
+  margin-top: 0.55rem;
+}
+
+.executiveCard {
+  margin-top: 1.35rem;
+  padding: 1.3rem;
+  background: linear-gradient(125deg, #e5f6f2 0%, #def2fc 100%);
+}
+
+.executiveCard p {
+  color: #1b6e86;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.executiveCard h3 {
+  margin-top: 0.5rem;
+}
+
+.groupBlock {
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.groupBlock h3 {
+  color: #20667f;
+  font-size: 0.88rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.footer {
+  background: #081923;
+  color: #d4e6f0;
+  margin-top: 2.3rem;
+  padding: 3rem 0 2.2rem;
+}
+
+.footerGrid {
+  display: grid;
+  gap: 1.1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer h2 {
+  color: #84ded5;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contactList {
+  list-style: none;
+  margin-top: 0.75rem;
+}
+
+.contactList li {
+  margin-bottom: 0.4rem;
+}
+
+.contactList a,
+.socialLinks a {
+  color: #f2fbff;
+}
+
+.socialBlock {
+  text-align: right;
+}
+
+.socialLinks {
+  display: inline-flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.copy {
+  border-top: 1px solid #193545;
+  color: #89a3b2;
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+}
+
+@media (max-width: 920px) {
+  .heroGrid,
+  .cardGridThree,
+  .cardGridTwo,
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .socialBlock {
+    text-align: left;
+  }
+
+  .navList {
+    display: none;
+  }
+}

@@ -14,12 +14,13 @@
 ## Estructura esperada por contexto (no encontrada)
 ```text
 services/
-├── main.py
-├── database.py
-├── models.py
-├── schemas.py
-└── routers/
-    └── inventory.py
+└── api/
+    ├── main.py
+    ├── database.py
+    ├── models.py
+    ├── schemas.py
+    └── routers/
+        └── inventory.py
 ```
 
 ## Especificaciones de hito esperadas (segun contexto)

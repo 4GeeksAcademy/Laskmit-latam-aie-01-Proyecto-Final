@@ -22,7 +22,7 @@ Segun el contexto del hito 5 deberian existir, al menos:
 ## Como verificar el estado actual
 1. `cd /workspaces/Laskmit-latam-aie-01-Proyecto-Final`
 2. `find services -maxdepth 3 -type f | sort`
-3. Confirmar que no existen archivos como `services/models.py`, `services/schemas.py`, `services/routers/inventory.py`.
+3. Confirmar que no existen archivos como `services/api/models.py`, `services/api/schemas.py`, `services/api/routers/inventory.py`.
 
 ## Como correr para probar (situacion actual)
 - No hay backend de inventario para levantar/probar en este estado.
