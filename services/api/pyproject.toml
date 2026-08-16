@@ -1,0 +1,29 @@
+[build-system]
+# Backend de empaquetado mínimo para que uv registre scripts del proyecto.
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nexova-suppliers-api"
+version = "0.1.0"
+requires-python = ">=3.11"
+# Dependencias necesarias para API, validaciones y persistencia TinyDB.
+dependencies = [
+  "fastapi==0.116.1",
+  "uvicorn==0.35.0",
+  "python-multipart==0.0.20",
+  "tinydb==4.8.2",
+  "pydantic[email]==2.11.7"
+]
+
+[project.scripts]
+# Permite correr el seeder como comando: uv run seed
+seed = "seed:main"
+
+[tool.uv]
+# Fuerza modo paquete para instalar entry points definidos arriba.
+package = true
+
+[tool.setuptools]
+# Módulos sueltos a incluir en el paquete local del servicio.
+py-modules = ["seed", "database", "models", "main"]

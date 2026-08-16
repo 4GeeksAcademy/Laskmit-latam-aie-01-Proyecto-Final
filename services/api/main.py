@@ -1,17 +1,35 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from pathlib import Path
+import sys
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, Response
 
-from shared.incidents_analysis import (
-    InvalidCsvFormatError,
-    analyze_csv_bytes,
-    export_result_to_csv_bytes,
-    result_to_summary_dict,
-)
+try:
+    from services.api.routes.suppliers import router as suppliers_router
+except ModuleNotFoundError:
+    from routes.suppliers import router as suppliers_router
+
+try:
+    from shared.incidents_analysis import (
+        InvalidCsvFormatError,
+        analyze_csv_bytes,
+        export_result_to_csv_bytes,
+        result_to_summary_dict,
+    )
+except ModuleNotFoundError:
+    repo_root = Path(__file__).resolve().parents[2]
+    if str(repo_root) not in sys.path:
+        sys.path.append(str(repo_root))
+    from shared.incidents_analysis import (
+        InvalidCsvFormatError,
+        analyze_csv_bytes,
+        export_result_to_csv_bytes,
+        result_to_summary_dict,
+    )
 
 
 @dataclass
@@ -21,7 +39,7 @@ class LastAnalysisStore:
     summary: dict[str, object]
 
 
-app = FastAPI(title="Nexova Incidents API", version="1.0.0")
+app = FastAPI(title="Nexova Operations API", version="1.1.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -32,6 +50,8 @@ app.add_middleware(
 )
 
 _last_analysis: LastAnalysisStore | None = None
+
+app.include_router(suppliers_router)
 
 
 @app.get("/api/incidents/health")

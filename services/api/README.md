@@ -28,3 +28,21 @@ uvicorn services.api.main:app --reload --port 8000
 ```
 
 El API quedará en `http://localhost:8000`.
+
+## Smoke test de Suppliers
+
+Para validar rápidamente el flujo principal del directorio de proveedores:
+
+```bash
+cd services/api
+python smoke_test_suppliers.py
+```
+
+El script verifica:
+- listado general
+- validación 422 en payload inválido
+- creación de proveedor
+- actualización de tarifa
+- actualización de estado
+- filtros por país y categoría
+- eliminación y validación 404 posterior
