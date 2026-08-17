@@ -1,0 +1,308 @@
+/* Layout general de la página de proveedores. */
+.page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #173247 0%, #173247 20%, #f2f6fb 20%, #f2f6fb 100%);
+  padding: 2rem 0 3rem;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 1480px;
+  width: 97%;
+  display: grid;
+  gap: 1rem;
+}
+
+/* Bloque de cabecera contextual (título y descripción). */
+.header {
+  color: #e7f4ff;
+  border: 1px solid rgba(195, 225, 244, 0.32);
+  border-radius: 1rem;
+  background: rgba(17, 51, 77, 0.7);
+  padding: 1.2rem;
+}
+
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #89d4f4;
+}
+
+.header h1 {
+  margin-top: 0.4rem;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+}
+
+.header p {
+  margin-top: 0.5rem;
+  color: #c2dfef;
+}
+
+.panel {
+  display: grid;
+}
+
+/* Grid principal: formulario a la izquierda y directorio a la derecha. */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 360px) minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  border-radius: 1rem;
+  border: 1px solid #d3e4f1;
+  background: #ffffff;
+  padding: 1rem;
+}
+
+.card h2 {
+  font-size: 1rem;
+  color: #15354f;
+}
+
+.form {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.62rem;
+}
+
+.form label {
+  display: grid;
+  gap: 0.3rem;
+  font-size: 0.84rem;
+  color: #486681;
+}
+
+/* Estilos base de formularios y controles de filtro. */
+.form input,
+.form select,
+.form textarea,
+.filters select,
+.actions select,
+.rateEditor input {
+  border: 1px solid #c6d9e8;
+  border-radius: 0.6rem;
+  padding: 0.55rem 0.6rem;
+  font: inherit;
+}
+
+.form button,
+.filtersHeader button,
+.actions button {
+  border: 1px solid #1f4f73;
+  border-radius: 0.65rem;
+  background: #1f4f73;
+  color: #ffffff;
+  padding: 0.5rem 0.7rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+.form button:hover,
+.filtersHeader button:hover,
+.actions button:hover {
+  background: #14354d;
+}
+
+.filtersHeader {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.filters {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.filters label {
+  display: grid;
+  gap: 0.3rem;
+  color: #486681;
+  font-size: 0.84rem;
+}
+
+/* Mensajería de feedback para éxito/error/carga. */
+.error,
+.success,
+.loading {
+  margin-top: 0.75rem;
+  border-radius: 0.65rem;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.88rem;
+}
+
+.error {
+  background: #ffe6e6;
+  border: 1px solid #ffb8b8;
+  color: #7a1f1f;
+}
+
+.success {
+  background: #e7f6ea;
+  border: 1px solid #bde8c6;
+  color: #17562b;
+}
+
+.loading {
+  background: #edf3f7;
+  border: 1px solid #d6e3ec;
+  color: #41617b;
+}
+
+/* Tabla responsive con scroll horizontal para pantallas estrechas. */
+.tableWrap {
+  margin-top: 0.8rem;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 980px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  border-bottom: 1px solid #e3edf5;
+  padding: 0.65rem 0.45rem;
+  vertical-align: top;
+  font-size: 0.88rem;
+}
+
+.table th {
+  color: #4b6b86;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.meta {
+  margin-top: 0.2rem;
+  color: #59758f;
+  font-size: 0.75rem;
+}
+
+.rateEditor {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.rateEditor input {
+  width: 120px;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 0.35rem;
+  justify-content: start;
+}
+
+.actions select {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 170px;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.45rem;
+}
+
+.actions button {
+  min-width: 82px;
+  padding: 0.35rem 0.2rem;
+  font-size: 0.78rem;
+  line-height: 1.1;
+}
+
+.supplierMeta {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.supplierMeta p {
+  margin: 0;
+}
+
+.countryCategoriesCell {
+  display: grid;
+  grid-template-columns: minmax(110px, max-content) minmax(220px, 1fr);
+  gap: 0.3rem 0.7rem;
+  align-items: start;
+}
+
+.countryValue,
+.categoriesValue {
+  margin: 0;
+}
+
+.notesInline {
+  grid-column: 1 / -1;
+  margin-top: 0.2rem;
+  padding: 0.3rem 0.45rem;
+  border-radius: 0.45rem;
+  background: #f2f7fc;
+  color: #38566f;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.dangerButton {
+  border-color: #8e1f1f;
+  background: #8e1f1f;
+}
+
+.dangerButton:hover {
+  background: #6f1717;
+}
+
+.actions .iconButton {
+  min-width: 22px;
+  width: 22px;
+  padding: 0.2rem 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Badges para diferenciar estado activo/suspendido de un vistazo. */
+.statusActive,
+.statusSuspended {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.statusActive {
+  background: #e8f7ec;
+  color: #1d6b35;
+  border: 1px solid #b6e2c2;
+}
+
+.statusSuspended {
+  background: #fff0dc;
+  color: #8a5514;
+  border: 1px solid #f2c994;
+}
+
+/* Resalta filas con renovación próxima (<= 60 días). */
+.renewalSoon {
+  background: #fff8e8;
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

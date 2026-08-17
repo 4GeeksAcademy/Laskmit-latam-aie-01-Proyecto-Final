@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Local TinyDB data for suppliers service
+services/api/data/
