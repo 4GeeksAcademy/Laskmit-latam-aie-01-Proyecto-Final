@@ -3,7 +3,7 @@ import {
   STAGE_LABELS,
   STATUS_LABELS,
   type CandidateRecord,
-} from "../../../Services/talentTrackerApi";
+} from "../../../../services/talent-tracker-api";
 
 interface CandidateTableProps {
   records: CandidateRecord[];

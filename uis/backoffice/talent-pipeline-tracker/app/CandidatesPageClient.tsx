@@ -11,7 +11,7 @@ import {
   listCandidateRecords,
   STAGE_LABELS,
   STATUS_LABELS,
-} from "../../../Services/talentTrackerApi";
+} from "../../../../services/talent-tracker-api";
 import { CandidateForm } from "@/components/CandidateForm";
 import { CandidateTable } from "@/components/CandidateTable";
 import {

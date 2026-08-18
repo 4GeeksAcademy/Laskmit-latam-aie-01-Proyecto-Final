@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { CandidateRecordInput } from "../../../Services/talentTrackerApi";
+import type { CandidateRecordInput } from "../../../../services/talent-tracker-api";
 import type {
   CandidateFormValues,
   OperationFeedback,

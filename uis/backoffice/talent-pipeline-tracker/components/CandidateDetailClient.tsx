@@ -16,7 +16,7 @@ import {
   type CandidateRecordInput,
   type CandidateStage,
   type CandidateStatus,
-} from "../../../Services/talentTrackerApi";
+} from "../../../../services/talent-tracker-api";
 import { CandidateForm } from "@/components/CandidateForm";
 import { formatDateTime, formatExperienceYears } from "@/lib/formatters";
 import {
